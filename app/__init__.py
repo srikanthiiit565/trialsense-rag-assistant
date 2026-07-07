@@ -1,0 +1,1 @@
+"""TrialSense RAG assistant package."""
