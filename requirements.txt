@@ -5,46 +5,44 @@ langchain
 langchain-core
 langchain-community
 langgraph
-langchain-ollama
 langchain-text-splitters
 
+# Embeddings (CPU)
 sentence-transformers
+torch==2.5.1+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
 
 transformers
-torch
 
+# Vector Database
 chromadb
 langchain-chroma
 
+# Retrieval
 rank-bm25
 
+# PDF Processing
 pymupdf
 
+# API
 requests
 httpx
 
+# Configuration
 python-dotenv
-
 pydantic
 pydantic-settings
 
+# Logging
 loguru
 
+# UI
 streamlit
 
-ragas
-
-pytest
-
+# Data
+pandas
 tqdm
 rich
 
-ollama
+# Biology / PubMed processing
 biopython
-
-rank-bm25 #for tokenization and ranking of documents
-
-
-ragas
-datasets
-pandas
