@@ -1,25 +1,45 @@
-"""API routes for the TrialSense assistant."""
 from fastapi import APIRouter
+
+from app.api.models import (
+    QueryRequest,
+    QueryResponse,
+    HealthResponse,
+)
+
+from app.agents.rag_agent import RAGAgent
+from app.utils.config import settings
+
 
 router = APIRouter()
 
-
-@router.get("/health")
-async def health_check():
-    return {
-        "status": "healthy"
-    }
+agent = RAGAgent()
 
 
-@router.get("/version")
-async def version():
-    return {
-        "version": "1.0.0"
-    }
+@router.get(
+    "/health",
+    response_model=HealthResponse,
+)
+def health():
+
+    return HealthResponse(
+        status="healthy",
+        model=settings.OLLAMA_MODEL,
+    )
 
 
-@router.get("/ping")
-async def ping():
-    return {
-        "message": "pong"
-    }
+@router.post(
+    "/query",
+    response_model=QueryResponse,
+)
+def query(
+    request: QueryRequest,
+):
+
+    result = agent.ask(
+        request.query
+    )
+
+    return QueryResponse(
+        answer=result["answer"],
+        citations=result["citations"],
+    )

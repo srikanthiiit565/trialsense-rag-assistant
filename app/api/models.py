@@ -1,0 +1,17 @@
+
+from pydantic import BaseModel
+from typing import List
+
+
+class QueryRequest(BaseModel):
+    query: str
+
+
+class QueryResponse(BaseModel):
+    answer: str
+    citations: List[str]
+
+
+class HealthResponse(BaseModel):
+    status: str
+    model: str

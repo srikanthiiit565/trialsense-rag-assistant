@@ -1,0 +1,35 @@
+[
+    {
+        "question":
+        "What are the available treatments for Alzheimer's disease?",
+
+        "expected_sources":
+        [
+            "42413935"
+        ],
+
+        "expected_keywords":
+        [
+            "donepezil",
+            "memantine",
+            "anti-amyloid"
+        ]
+    },
+
+
+    {
+        "question":
+        "What are Phase III Alzheimer's clinical trials?",
+
+        "expected_sources":
+        [
+            "NCT05292222"
+        ],
+
+        "expected_keywords":
+        [
+            "phase",
+            "clinical trial"
+        ]
+    }
+]

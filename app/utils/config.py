@@ -4,22 +4,14 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
 
-    OPENAI_API_KEY: str
+    OLLAMA_BASE_URL: str | None = None
+    OLLAMA_MODEL: str | None = None
 
-    PINECONE_API_KEY: str
-    PINECONE_INDEX: str
+    GROQ_API_KEY: str | None = None
+    GROQ_MODEL: str | None = None
+    GROQ_BASE_URL: str | None = None
 
-    POSTGRES_USER: str
-    POSTGRES_PASSWORD: str
-    POSTGRES_DB: str
-    POSTGRES_HOST: str
-    POSTGRES_PORT: int
-
-    LANGCHAIN_API_KEY: str = ""
-    LANGCHAIN_TRACING_V2: bool = False
-    LANGCHAIN_PROJECT: str = ""
-
-    HUGGINGFACEHUB_API_TOKEN: str = ""
+    CHROMA_DB_PATH: str
 
     LOG_LEVEL: str = "INFO"
 

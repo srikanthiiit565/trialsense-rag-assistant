@@ -1,8 +1,41 @@
-version: '3.9'
 services:
-  app:
+
+  api:
     build:
       context: .
-      dockerfile: docker/Dockerfile
+      dockerfile: Dockerfile.api
+
+    container_name: trialsense-api
+
     ports:
       - "8000:8000"
+
+    env_file:
+      - .env
+
+    environment:
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=llama3.1:8b
+      - CHROMA_DB_PATH=/app/data/chroma_db
+
+    volumes:
+      - ./data:/app/data
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+
+    container_name: trialsense-ui
+
+    ports:
+      - "8501:8501"
+
+    env_file:
+      - .env
+
+    environment:
+      - API_URL=http://api:8000/query
+
+    depends_on:
+      - api

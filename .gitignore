@@ -2,3 +2,91 @@ __pycache__/
 *.py[cod]
 .env
 .venv/
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+.venv/
+venv/
+
+# Environment Variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+logs/
+
+# Database
+*.db
+
+# Data
+data/raw/*
+data/processed/*
+data/chunks/*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Mac
+.DS_Store
+
+# Environment
+.env
+
+# Python virtual environment
+RAGenv/
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ChromaDB
+data/chroma_db/
+
+# Local data
+data/raw/
+data/processed/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+RAGenv/
+venv/
+
+# Environment variables
+.env
+
+# Database
+data/chroma_db/
+*.sqlite3
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+
+# Secrets
+*.pem

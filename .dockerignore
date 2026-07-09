@@ -1,0 +1,16 @@
+id="dockerignore"
+RAGenv
+
+__pycache__
+
+*.pyc
+
+.git
+
+data/chroma_db
+
+data/trialsense_analytics.db
+
+.vscode
+
+.DS_Store
