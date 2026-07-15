@@ -5,6 +5,7 @@ langchain
 langchain-core
 langchain-community
 langgraph
+langchain_ollama
 langchain-text-splitters
 
 # Embeddings (CPU)
